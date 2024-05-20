@@ -234,6 +234,12 @@ body {
 
 /* Header User Profile */
 
+/* Logo */
+.logo {
+  color: #bb2d3b;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
 /* Navbar */
 nav {
   background-color: white;

@@ -15,9 +15,9 @@ router.put(updateRoom);
 router.delete(deleteRoom);
 
 export async function PUT(req: NextRequest, ctx: RequestContext) {
-  return router.run(req, ctx);
+  return router.run(req, ctx) as Promise<Response>;
 }
 
 export async function DELETE(req: NextRequest, ctx: RequestContext) {
-  return router.run(req, ctx);
+  return router.run(req, ctx) as Promise<Response>;
 }

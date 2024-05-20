@@ -1,7 +1,10 @@
-"use client"; // Error components must be Client Components
+"use client";
 
 import { useEffect } from "react";
 
+interface Error {
+  errMessage: string;
+}
 export default function Error({
   error,
   reset,
@@ -9,24 +12,25 @@ export default function Error({
   error: Error & { digest?: string };
   reset?: () => void;
 }) {
-  useEffect(() => {
-    // Log the error to an error reporting service
-    console.error(error);
-  }, [error]);
-
   return (
-    <div>
-      <h2>Something went wrong!</h2>
-      {reset && (
-        <button
-          onClick={
-            // Attempt to recover by trying to re-render the segment
-            () => reset()
-          }
-        >
-          Try again
-        </button>
-      )}
+    <div className="d-flex justify-content-center align-items-center vh-100">
+      <div className="text-center">
+        <h2 className="display-4 fw-bold">{error?.errMessage}</h2>
+        <p className="fs-3">
+          {" "}
+          <span className="text-danger">Opps!</span> Something went wrong!
+        </p>
+        {reset && (
+          <button
+            onClick={
+              // Attempt to recover by trying to re-render the segment
+              () => reset()
+            }
+          >
+            Try again
+          </button>
+        )}
+      </div>
     </div>
   );
 }

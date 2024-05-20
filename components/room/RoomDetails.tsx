@@ -1,7 +1,6 @@
 "use client";
 
 import { IRoom } from "@/backend/models/room";
-import React from "react";
 import StarRatings from "react-star-ratings";
 import RoomImageSlider from "./RoomImageSlider";
 import RoomFeatures from "./RoomFeatures";
@@ -46,12 +45,30 @@ const RoomDetails = ({ data }: Props) => {
 
         <div className="col-12 col-md-6 col-lg-4">
           <BookingDatePicker room={room} />
-          // Room Map - TODO
+          {room?.address && (
+            <div className="my-5">
+              <h4 className="my-2">Room Location:</h4>
+              <div
+                id="room-map"
+                className="shadow rounded"
+                style={{ height: 350, width: "100%" }}
+              >
+                <iframe
+                  width="100%"
+                  height="350"
+                  style={{ border: 0 }}
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                  src={`https://www.google.com/maps/embed/v1/place?q=${room?.address}&key=${process.env.MAP_API_KEY}`}
+                />
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
-      <NewReview />
-      <ListReviews />
+      <NewReview roomId={room?._id} />
+      <ListReviews reviews={room?.reviews} />
     </div>
   );
 };

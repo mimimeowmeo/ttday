@@ -13,5 +13,5 @@ router.get(allRooms);
 router.post(newRoom);
 
 export async function GET(req: NextRequest, ctx: RequestContext) {
-  return router.run(req, ctx);
+  return router.run(req, ctx) as Promise<Response>;
 }

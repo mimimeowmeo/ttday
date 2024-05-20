@@ -12,5 +12,5 @@ dbConnect();
 router.post(newRoom);
 
 export async function POST(req: NextRequest, ctx: RequestContext) {
-  return router.run(req, ctx);
+  return router.run(req, ctx) as Promise<Response>;
 }

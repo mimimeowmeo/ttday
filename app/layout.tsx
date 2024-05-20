@@ -35,6 +35,7 @@ export default function RootLayout({
           <Footer />
         </GlobalProvider>
       </body>
+      <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" />
       <Script src="https://kit.fontawesome.com/d7edb6654f.js" />
     </html>
   );
