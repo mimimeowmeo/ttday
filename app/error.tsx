@@ -15,7 +15,9 @@ export default function Error({
   return (
     <div className="d-flex justify-content-center align-items-center vh-100">
       <div className="text-center">
-        <h2 className="display-4 fw-bold">{error?.errMessage}</h2>
+        <h2 className="display-4 fw-bold">
+          {JSON.stringify(error)}ddddd{error?.errMessage}
+        </h2>
         <p className="fs-3">
           {" "}
           <span className="text-danger">Opps!</span> Something went wrong!
