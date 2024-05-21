@@ -2,7 +2,7 @@ export const rooms = [
   {
     name: "Sydney Boutique Hotel",
     pricePerNight: 168,
-    description: "Your holiday start from here!",
+    description: "Your holiday starts from here!",
     address: "114 Darlinghurst Rd, Darlinghurst NSW 2010",
     guestCapacity: 1,
     numOfBeds: 1,

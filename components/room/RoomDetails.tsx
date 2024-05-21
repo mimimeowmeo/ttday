@@ -59,7 +59,7 @@ const RoomDetails = ({ data }: Props) => {
                   style={{ border: 0 }}
                   referrerPolicy="no-referrer-when-downgrade"
                   allowFullScreen
-                  src={`https://www.google.com/maps/embed/v1/place?q=${room?.address}&key=${process.env.MAP_API_KEY}`}
+                  src={`https://www.google.com/maps/embed/v1/place?q=${room?.address}&key=${process.env.NEXT_PUBLIC_MAP_API_KEY}`}
                 />
               </div>
             </div>
