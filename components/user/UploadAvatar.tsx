@@ -40,9 +40,11 @@ const UploadAvatar = () => {
 
     if (isSuccess) {
       //@ts-ignore
-      updateSession();
-
-      router.refresh();
+      updateSession()
+        .unwrap()
+        .then(() => {
+          router.refresh();
+        });
     }
   }, [user, error, isSuccess]);
 

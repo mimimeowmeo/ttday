@@ -39,9 +39,11 @@ const UpdateProfile = () => {
 
     if (isSuccess) {
       //@ts-ignore
-      updateSession();
-
-      router.refresh();
+      updateSession()
+        .unwrap()
+        .then(() => {
+          router.refresh();
+        });
     }
   }, [currentUser, error, isSuccess]);
 
