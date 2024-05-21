@@ -7,14 +7,11 @@ interface RequestContext {}
 
 const router = createEdgeRouter<NextRequest, RequestContext>();
 
-// dbConnect();
+dbConnect();
 
-// router.get(allRooms);
-// router.post(newRoom);
+router.get(allRooms);
+router.post(newRoom);
 
 export async function GET(req: NextRequest, ctx: RequestContext) {
-  await dbConnect();
-  router.get(allRooms);
-
   return router.run(req, ctx) as Promise<Response>;
 }
