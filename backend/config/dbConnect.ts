@@ -12,6 +12,7 @@ const dbConnect = async () => {
   }
   if (process.env.NODE_ENV === "production") {
     DB_URI = process.env.DB_URI!;
+    console.log(DB_URI, 1234);
   }
 
   await mongoose.connect(DB_URI);
